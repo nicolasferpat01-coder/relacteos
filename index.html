@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Relácteo: conectamos proveedores y compradores</title>
+<style>
+:root{--bg:#fbf8f1;--surface:#fff;--text:#1f2a24;--muted:#5b6860;--accent:#1f6f54;--accent-t:#fff;--line:#e3ddcf;--soft:#eef3ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a17;--surface:#1c2420;--text:#eef2ee;--muted:#a3b0a8;--accent:#5fc79e;--accent-t:#0f1a14;--line:#2c3832;--soft:#1a231e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141a17;--surface:#1c2420;--text:#eef2ee;--muted:#a3b0a8;--accent:#5fc79e;--accent-t:#0f1a14;--line:#2c3832;--soft:#1a231e;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,h3,button,label,.nav a,.tag{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:18px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.1rem;font-family:"Trebuchet MS",sans-serif}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:.95rem}
+.hero{padding:56px 0 40px}
+.tag{display:inline-block;background:var(--soft);color:var(--accent);padding:4px 12px;border-radius:99px;font-size:.85rem;font-weight:700}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;margin:16px 0}
+.hero p{max-width:600px;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--accent);font-family:"Trebuchet MS",sans-serif;font-size:1rem;cursor:pointer}
+.btn.p{background:var(--accent);color:var(--accent-t)}
+.btn.s{background:transparent;color:var(--accent)}
+section{padding:40px 0}
+h2{font-size:1.6rem;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.num{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-t);align-items:center;justify-content:center;font-weight:700;margin-bottom:10px;font-family:sans-serif}
+form{display:grid;gap:12px}
+label{font-size:.85rem;font-weight:700;display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:11px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);width:100%}
+.two{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.note{font-size:.8rem;color:var(--muted);margin:0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25a244;color:#fff;padding:13px 18px;border-radius:22px;text-align:center;line-height:1.3;text-decoration:none;font:700 .95rem "Trebuchet MS",sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><span class="logo">🥛 Relácteo</span>
+<nav class="nav"><a href="#como">Cómo funciona</a><a href="#proveedores">Proveedores</a><a href="#compradores">Compradores</a><a href="#ubicacion">Ubicación</a></nav></div></header>
+
+<main>
+<div class="wrap hero">
+<span class="tag">Intermediación de lactosuero</span>
+<h1>Conectamos a quienes producen lactosuero con quienes lo necesitan</h1>
+<p>Volumen constante, calidad verificada y entrega coordinada. Nosotros hacemos el cruce para que tú no pierdas tiempo buscando.</p>
+<div class="btns"><a class="btn p" href="#proveedores">Quiero vender lactosuero</a><a class="btn s" href="#compradores">Quiero comprar lactosuero</a></div>
+</div>
+
+<section id="como"><div class="wrap">
+<h2>Cómo funciona</h2><p class="sub">Tres pasos, sin complicaciones.</p>
+<div class="grid">
+<div class="card"><span class="num">1</span><h3>Nos cuentas</h3><p>Qué lactosuero tienes o qué necesitas: tipo, volumen y frecuencia.</p></div>
+<div class="card"><span class="num">2</span><h3>Hacemos el cruce</h3><p>Buscamos la contraparte ideal y negociamos precio y condiciones.</p></div>
+<div class="card"><span class="num">3</span><h3>Coordinamos entrega y pago</h3><p>Logística, transporte y cierre de la operación.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Por qué trabajar con nosotros</h2><p class="sub">Beneficios para cada lado.</p>
+<div class="grid">
+<div class="card"><h3>Para proveedores</h3><p>Dale salida a tu subproducto, genera un ingreso extra y evita problemas de disposición.</p></div>
+<div class="card"><h3>Para compradores</h3><p>Abastecimiento confiable, precio claro y entregas a tiempo para tu planta, finca o producción.</p></div>
+<div class="card"><h3>Tipos que manejamos</h3><p>Lactosuero dulce y ácido, líquido o en polvo, según tu necesidad.</p></div>
+</div></div></section>
+
+<section id="proveedores"><div class="wrap two">
+<div class="card"><h2>Soy proveedor</h2><p class="sub">Queserías y plantas lácteas.</p>
+<form id="fp">
+<label>Empresa<input name="empresa" required></label>
+<label>Ciudad o zona<input name="zona" required></label>
+<label>Tipo de lactosuero<select name="tipo"><option>Dulce líquido</option><option>Ácido líquido</option><option>En polvo</option><option>Otro</option></select></label>
+<label>Volumen y frecuencia (ej. 5.000 L por semana)<input name="vol" required></label>
+<button class="btn p" type="submit">Enviar por WhatsApp</button>
+</form></div>
+
+<div class="card" id="compradores"><h2>Soy comprador</h2><p class="sub">Ganaderos, fabricantes e industria.</p>
+<form id="fc">
+<label>Empresa o nombre<input name="empresa" required></label>
+<label>Ciudad de entrega<input name="zona" required></label>
+<label>Tipo que necesitas<select name="tipo"><option>Dulce líquido</option><option>Ácido líquido</option><option>En polvo</option><option>Otro</option></select></label>
+<label>Volumen, frecuencia y uso<input name="vol" required></label>
+<button class="btn p" type="submit">Enviar por WhatsApp</button>
+</form></div>
+</div></section>
+<section id="ubicacion"><div class="wrap">
+<h2>Ubicación</h2><p class="sub">Encuéntranos en Bogotá.</p>
+<div class="card"><h3>📍 Nuestra ubicación</h3><p>Mira dónde estamos en Google Earth.</p>
+<div class="btns"><a class="btn p" href="https://earth.google.com/web/search/Universidad+de+los+Andes/@4.6014581,-74.0661334,2632.95476748a,842.18398932d,35y,0h,0t,0r/data=CjsaDQoJL20vMDNweTU1GAIiJgokCZ6GnN-hVzNAEZmGnN-hVzPAGT6gv0w2wUhAIXF6vG9La0nAQgIIAToDCgEwQgIIAEoNCP___________wEQAA?authuser=0&hl=es" target="_blank" rel="noopener">Ver ubicación en Google Earth</a></div>
+<p style="margin-top:16px;color:var(--text)"><strong>Dirección:</strong> Universidad de los Andes, Carrera 1 # 18A-12, Bogotá, Colombia</p></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Relácteo · Intermediación entre proveedores y compradores · Contacto: <a href="mailto:relacteos@hotmail.com" style="color:inherit">relacteos@hotmail.com</a></div></footer>
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener">💬 WhatsApp · ¿Necesitas soporte?</a>
+
+<script>
+// Cambia este número por el tuyo (código de país + número, sin + ni espacios)
+var NUM="573114414005";
+function link(t){return "https://api.whatsapp.com/send?phone="+NUM+"&text="+encodeURIComponent(t)}
+document.getElementById("wa").href=link("Hola, quiero información sobre lactosuero.");
+function send(id,rol){document.getElementById(id).addEventListener("submit",function(e){
+e.preventDefault();var d=new FormData(e.target);
+var t="Hola, soy "+rol+".\nEmpresa: "+d.get("empresa")+"\nZona: "+d.get("zona")+"\nTipo: "+d.get("tipo")+"\nVolumen/uso: "+d.get("vol");
+var a=document.createElement("a");a.href=link(t);a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()})}
+send("fp","proveedor de lactosuero");send("fc","comprador de lactosuero");
+</script>
+</body>
+</html>
